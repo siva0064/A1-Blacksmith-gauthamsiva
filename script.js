@@ -12,7 +12,7 @@
 const forge = document.querySelector('#forge');
 const forgeImage = document.querySelector('#forge-image');
 const forgeStatus = document.querySelector('#forge-status');
-const heatValue = document.querySelector('#heat-value');
+const heatForge = document.querySelector('#heat-value');
 const swordCount = document.querySelector('#sword-count');
 const actionMessage = document.querySelector('#action-message');
 
@@ -32,8 +32,17 @@ function getForgeStatus(heatValue) {
 }
 
 // 4. Write updateForge(). Update text and apply one status class.
+function updateForge() {
+    heatDisplay.textContent = forgeHeat;
+    swordCount.textContent = swordMade;
+
+    const status = getForgeStatus(forgeHeat);
+    forgeStatus.textContent = status;
+}
+
 //    Change the supplied forge image src and alt to match the heat.
 //    Keep the most recent action message visible.
+
 
 // 5. Write resetForge(). Restore the state, message, and display.
 
