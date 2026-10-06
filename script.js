@@ -59,11 +59,18 @@ function updateForge() {
 }
 
 // 5. Write resetForge(). Restore the state, message, and display.
+function resetForge() {
+    forgeHeat = 20;
+    swordsMade = 0;
+    actionMessage.textContent = "Welcome to the Forge! Add Heat to begin.";
+    updateForge();
+}
 
 // 6. Write heatForge(amount). Add heat, cap it, and update the page.
 
 // 7. Write makeSword(). Handle both success and insufficient heat.
 
 // 8. Call resetForge() once to start the game.
+resetForge();
 
 // Use the tests in ASSIGNMENT.md to check your work.
