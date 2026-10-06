@@ -25,7 +25,7 @@ function getForgeStatus(heatValue) {
     if (heatValue < 30) {
         return 'Too cold!';
     } else if (heatValue <70) {
-        return 'Strike while it\'s hot!';
+        return 'Ready to Forge!';
     } else {
         return 'Roaring hot!';
     }
@@ -34,15 +34,29 @@ function getForgeStatus(heatValue) {
 // 4. Write updateForge(). Update text and apply one status class.
 function updateForge() {
     heatDisplay.textContent = forgeHeat;
-    swordCount.textContent = swordMade;
+    swordCount.textContent = swordsMade;
 
-    const status = getForgeStatus(forgeHeat);
-    forgeStatus.textContent = status;
-}
+    const currentStatus = getForgeStatus(forgeHeat);
+    forgeStatus.textContent = currentStatus;
 
 //    Change the supplied forge image src and alt to match the heat.
 //    Keep the most recent action message visible.
+    forge.classList.remove("is-cold", "is-ready", "is-roaring");
 
+    if (currentStatus === "Too cold!") {
+        forge.classList.add("is-cold");
+        forgeImage.src = "assets/forge-cold.svg";
+        forgeImage.alt = "A cold forge with no fire.";
+    } else if (currentStatus === "Ready to Forge!") {
+        forge.classList.add("is-ready");
+        forgeImage.src = "assets/forge-ready.svg";
+        forgeImage.alt = "A forge with a small fire.";
+    } else {
+        forge.classList.add("is-roaring");
+        forgeImage.src = "assets/forge-roaring.svg";
+        forgeImage.alt = "A stone forge with tall bright flames and sparks";
+    }
+}
 
 // 5. Write resetForge(). Restore the state, message, and display.
 
