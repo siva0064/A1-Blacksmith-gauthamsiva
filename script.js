@@ -1,13 +1,35 @@
 // Assignment 1: Blacksmith — The Tiny Forge
 
 // PLAN: Write a short pseudocode plan for making a sword here.
+// The player calls makeSword()
+// System check if forge heat is 30< 
+// IF YES: subtract 30 heat, add 1 sword, and show a success message
+// IF NO: No change, show message saying 'more heat needed'
+// Then, refresh the forge display to show the new heat, sword count, and status.
 
 // 1. Select the forge, heat, sword count, status, image, and message elements.
 //    Find their IDs in index.html.
+const forge = document.querySelector('#forge');
+const forgeImage = document.querySelector('#forge-image');
+const forgeStatus = document.querySelector('#forge-status');
+const heatValue = document.querySelector('#heat-value');
+const swordCount = document.querySelector('#sword-count');
+const actionMessage = document.querySelector('#action-message');
 
 // 2. Create the two state variables: heat and swords made.
+let forgeHeat = 20;
+let swordMade = 0;
 
 // 3. Write getForgeStatus(heatValue). Return the correct status string.
+function getForgeStatus(heatValue) {
+    if (heatValue < 30) {
+        return 'Too cold!';
+    } else if (heatValue <70) {
+        return 'Strike while it\'s hot!';
+    } else {
+        return 'Roaring hot!';
+    }
+}
 
 // 4. Write updateForge(). Update text and apply one status class.
 //    Change the supplied forge image src and alt to match the heat.
