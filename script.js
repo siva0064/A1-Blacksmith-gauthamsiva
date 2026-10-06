@@ -79,6 +79,18 @@ function heatForge(amount) {
 }
 
 // 7. Write makeSword(). Handle both success and insufficient heat.
+function makeSword() {
+    if (forgeHeat >= 30) {
+        forgeHeat = forgeHeat - 30;
+        swordsMade = swordsMade + 1;
+        actionMessage.textContent = "You forge a sword! Swords Made: " + swordsMade + ".";
+    } else { 
+        actionMessage.textContent = "The forge needs more Heat! 30 Heat is required to make a sword.";
+    }
+
+    updateForge();
+
+}
 
 // 8. Call resetForge() once to start the game.
 resetForge();
