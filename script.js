@@ -12,7 +12,7 @@
 const forge = document.querySelector('#forge');
 const forgeImage = document.querySelector('#forge-image');
 const forgeStatus = document.querySelector('#forge-status');
-const heatForge = document.querySelector('#heat-value');
+const heatValue = document.querySelector('#heat-value');
 const swordCount = document.querySelector('#sword-count');
 const actionMessage = document.querySelector('#action-message');
 
