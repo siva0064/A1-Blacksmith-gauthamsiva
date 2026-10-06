@@ -96,3 +96,5 @@ function makeSword() {
 resetForge();
 
 // Use the tests in ASSIGNMENT.md to check your work.
+// Checked the code in live server via provided tests, adding this message to complete the assignment.
+
