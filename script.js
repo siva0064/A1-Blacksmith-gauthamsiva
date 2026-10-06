@@ -67,6 +67,16 @@ function resetForge() {
 }
 
 // 6. Write heatForge(amount). Add heat, cap it, and update the page.
+function heatForge(amount) {
+    forgeHeat = forgeHeat + amount;
+
+    if (forgeHeat > 100) {
+        forgeHeat = 100;
+    }
+
+    actionMessage.textContent = "You stoke the forge. Heat is now " + forgeHeat + ".";
+    updateForge();
+}
 
 // 7. Write makeSword(). Handle both success and insufficient heat.
 
